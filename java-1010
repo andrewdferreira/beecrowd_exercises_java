@@ -1,0 +1,23 @@
+import java.io.IOException;
+import java.util.Scanner;
+
+public class Main {
+ 
+    public static void main(String[] args) throws IOException {
+        Scanner input = new Scanner(System.in);
+        
+        int cod1 = input.nextInt();
+        int qtde1 = input.nextInt();
+        float val1 = input.nextFloat();
+        
+        int cod2 = input.nextInt();
+        int qtde2 = input.nextInt();
+        float val2 = input.nextFloat();
+        
+        float total = (qtde1 * val1) + (qtde2 * val2);
+        
+        System.out.printf("VALOR A PAGAR: R$ %.2f\n", total);
+ 
+    }
+ 
+}
