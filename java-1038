@@ -1,0 +1,39 @@
+import java.io.IOException;
+import java.util.Scanner;
+
+public class Main {
+ 
+    public static void main(String[] args) throws IOException {
+        Scanner scan = new Scanner(System.in);
+        
+        int id = scan.nextInt();
+        int qtde = scan.nextInt();
+        double preco;
+        
+        switch (id){
+            case 1:
+                preco = 4.00;
+                System.out.printf("Total: R$ %.2f\n", (qtde * preco));
+                break;
+            case 2:
+                preco = 4.50;
+                System.out.printf("Total: R$ %.2f\n", (qtde * preco));
+                break;
+            case 3:
+                preco = 5.00;
+                System.out.printf("Total: R$ %.2f\n", (qtde * preco));
+                break;
+            case 4:
+                preco = 2.00;
+                System.out.printf("Total: R$ %.2f\n", (qtde * preco));
+                break;
+            case 5:
+                preco = 1.50;
+                System.out.printf("Total: R$ %.2f\n", (qtde * preco));
+                break;
+            default:
+                System.out.println("id inválido");
+        }
+    }
+ 
+}
