@@ -1,0 +1,38 @@
+import java.io.IOException;
+import java.util.Scanner;
+
+public class Main {
+ 
+    public static void main(String[] args) throws IOException {
+        Scanner scan = new Scanner(System.in);
+        
+        float nota1 = scan.nextFloat() * 2;
+        float nota2 = scan.nextFloat() * 3;
+        float nota3 = scan.nextFloat() * 4;
+        float nota4 = scan.nextFloat();
+        
+        float media = (nota1 + nota2 + nota3 + nota4) / 10;
+        
+        if (media >= 7.0) {
+            System.out.printf("Media: %.1f\n", media);
+            System.out.println("Aluno aprovado.");
+        } else if (media < 5.0) {
+            System.out.printf("Media: %.1f\n", media);
+            System.out.println("Aluno reprovado.");
+        } else {
+            System.out.printf("Media: %.1f\n", media);
+            System.out.println("Aluno em exame.");
+            float notaExame = scan.nextFloat();
+            System.out.printf("Nota do exame: %.1f\n", notaExame);
+            media = (media + notaExame) / 2;
+            if (media >= 5.0) {
+                System.out.println("Aluno aprovado.");
+                System.out.printf("Media final: %.1f\n", media);
+            } else {
+                System.out.println("Aluno reprovado.");
+                System.out.printf("Media final: %.1f\n", media);
+            }
+        }
+    }
+ 
+}
