@@ -1,0 +1,28 @@
+import java.io.IOException;
+import java.util.Scanner;
+import java.util.Arrays;
+
+public class Main {
+ 
+    public static void main(String[] args) throws IOException {
+        Scanner scan = new Scanner(System.in);
+
+        int[] valoresEntrada = new int [3];
+        int[] valoresCrescentes = new int [3];
+
+        for (int i = 0; i < valoresEntrada.length; i++) {
+            valoresEntrada[i] = scan.nextInt();
+            valoresCrescentes[i] = valoresEntrada[i];
+        }
+        Arrays.sort(valoresCrescentes);
+
+        System.out.println(valoresCrescentes[0]);
+        System.out.println(valoresCrescentes[1]);
+        System.out.println(valoresCrescentes[2]);
+        System.out.println();
+        System.out.println(valoresEntrada[0]);
+        System.out.println(valoresEntrada[1]);
+        System.out.println(valoresEntrada[2]);
+    }
+ 
+}
