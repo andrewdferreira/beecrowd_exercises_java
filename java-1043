@@ -1,0 +1,22 @@
+import java.io.IOException;
+import java.util.Scanner;
+
+public class Main {
+ 
+    public static void main(String[] args) throws IOException {
+        Scanner scan = new Scanner(System.in);
+        
+        float valorA = scan.nextFloat();
+        float valorB = scan.nextFloat();
+        float valorC = scan.nextFloat();
+        
+        if ((valorA + valorB > valorC) && (valorB + valorC > valorA) && (valorC + valorA > valorB)) {
+            float perimetro = valorA + valorB + valorC;
+            System.out.printf("Perimetro = %.1f\n", perimetro);
+        } else {
+            float area = ((valorA + valorB) * valorC) / 2;
+            System.out.printf("Area = %.1f\n", area);
+        }
+    }
+ 
+}
