@@ -1,0 +1,25 @@
+import java.io.IOException;
+import java.util.Scanner;
+
+public class Main {
+ 
+    public static void main(String[] args) throws IOException {
+        Scanner scan = new Scanner(System.in);
+        
+        int comeco = scan.nextInt();
+        int termino = scan.nextInt();
+        int tempoDeJogo = 0;
+        
+        if (termino > comeco) {
+            tempoDeJogo = termino - comeco;
+            System.out.println("O JOGO DUROU " + tempoDeJogo + " HORA(S)");
+        }
+        
+        if (termino <= comeco) {
+            tempoDeJogo = (24 - comeco) + termino;
+            System.out.println("O JOGO DUROU " + tempoDeJogo + " HORA(S)");
+        }
+        
+        
+    }
+}
