@@ -1,0 +1,19 @@
+import java.io.IOException;
+import java.util.Scanner;
+
+public class Main {
+ 
+    public static void main(String[] args) throws IOException {
+        Scanner scan = new Scanner(System.in);
+        
+        int valueA = scan.nextInt();
+        int valueB = scan.nextInt();
+        
+        if (valueA % valueB == 0 || valueB % valueA == 0) {
+            System.out.println("Sao Multiplos");
+        } else {
+            System.out.println("Nao sao Multiplos");
+        }
+    }
+ 
+}
