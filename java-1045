@@ -1,0 +1,39 @@
+import java.io.IOException;
+import java.util.Scanner;
+import java.util.Arrays;
+
+public class Main {
+ 
+    public static void main(String[] args) throws IOException {
+        Scanner scan = new Scanner(System.in);
+        
+        float[] values = new float[3];
+        
+        for (int i = 0; i < values.length; i++) {
+            values[i] = scan.nextFloat();
+        }
+        Arrays.sort(values);
+        
+        double valueA = values[2];
+        double valueB = values[1];
+        double valueC = values[0];
+        
+        if (valueA >= valueB + valueC) {
+            System.out.println("NAO FORMA TRIANGULO");
+        } else {
+            if (Math.pow(valueA, 2) == Math.pow(valueB, 2) + Math.pow(valueC, 2)) {
+            System.out.println("TRIANGULO RETANGULO");
+            } else if (Math.pow(valueA, 2) < Math.pow(valueB, 2) + Math.pow(valueC, 2)) {
+            System.out.println("TRIANGULO ACUTANGULO");
+            } else {
+            System.out.println("TRIANGULO OBTUSANGULO");
+            }
+        
+            if (valueA == valueB && valueC == valueB) {
+            System.out.println("TRIANGULO EQUILATERO");
+            } else if (valueA == valueB || valueB == valueC || valueA == valueC) {
+            System.out.println("TRIANGULO ISOSCELES");
+            }
+        }
+    }
+}
