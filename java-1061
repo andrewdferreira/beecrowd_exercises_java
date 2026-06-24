@@ -1,0 +1,44 @@
+import java.io.IOException;
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) throws IOException {
+        Scanner scan = new Scanner(System.in);
+        
+        scan.next();
+        int diaIni = scan.nextInt();
+        int horaIni = scan.nextInt() * 3600;
+        scan.next();
+        int minIni = scan.nextInt() * 60;
+        scan.next();
+        int segIni = scan.nextInt();
+
+        scan.next();
+        int diaFin = scan.nextInt();
+        int horaFin = scan.nextInt() * 3600;
+        scan.next();
+        int minFin = scan.nextInt() * 60;
+        scan.next();
+        int segFin = scan.nextInt();
+
+        int totalFin = ((diaFin - diaIni) * 86400) + horaFin + minFin + segFin;
+
+        int tempoEventoEmSegundos = totalFin - (horaIni + minIni + segIni);
+
+        diaFin = tempoEventoEmSegundos / 86400;
+        tempoEventoEmSegundos = tempoEventoEmSegundos - (diaFin * 86400);
+
+        horaFin = tempoEventoEmSegundos / 3600;
+        tempoEventoEmSegundos = tempoEventoEmSegundos - (horaFin * 3600);
+
+        minFin = tempoEventoEmSegundos / 60;
+        tempoEventoEmSegundos = tempoEventoEmSegundos - (minFin * 60);
+
+        System.out.println(diaFin + " dia(s)");
+        System.out.println(horaFin + " hora(s)");
+        System.out.println(minFin + " minuto(s)");
+        System.out.println(tempoEventoEmSegundos + " segundo(s)");
+    }
+
+}
