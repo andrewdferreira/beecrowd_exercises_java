@@ -1,0 +1,27 @@
+import java.io.IOException;
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) throws IOException {
+        Scanner scan = new Scanner(System.in);
+        int size = scan.nextInt();
+        double[] values = new double[size];
+
+        for (int i = 0; i < values.length; i++) {
+            values[i] = scan.nextDouble();
+            if (values[i] % 2 == -1 && values[i] < 0) {
+                System.out.println("ODD NEGATIVE");
+            } else if (values[i] % 2 == 1 && values[i] > 0) {
+                System.out.println("ODD POSITIVE");
+            } else if (values[i] == 0) {
+                System.out.println("NULL");
+            } else if (values[i] % 2 == 0 && values[i] < 0) {
+                System.out.println("EVEN NEGATIVE");
+            } else if (values[i] % 2 == 0 && values[i] > 0) {
+                System.out.println("EVEN POSITIVE");
+            }
+        }
+    }
+
+}
