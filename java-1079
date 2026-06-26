@@ -1,0 +1,21 @@
+import java.io.IOException;
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) throws IOException {
+        Scanner scan = new Scanner(System.in);
+
+        int size = scan.nextInt();
+
+        for (int i = 0; i < size; i++) {
+            double notaA = scan.nextDouble();
+            double notaB = scan.nextDouble();
+            double notaC = scan.nextDouble();
+
+            double media = ((notaA * 2) + (notaB * 3) + (notaC * 5)) / 10;
+            System.out.printf("%.1f\n", media);
+        }
+    }
+
+}
