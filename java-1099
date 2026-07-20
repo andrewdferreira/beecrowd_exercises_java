@@ -1,0 +1,35 @@
+import java.io.IOException;
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) throws IOException {
+        Scanner scan = new Scanner(System.in);
+
+        int n = scan.nextInt();
+
+        for (int i = 1; i <= n; i++) {
+            int x = scan.nextInt();
+            int y = scan.nextInt();
+            int soma = 0;
+            if (x > y) {
+                for (int j = y + 1; j < x; j++ ) {
+                    if (j % 2 == 1) {
+                        soma += j;
+                    }
+                }
+            } else if (y > x) {
+                for (int j = x + 1; j < y; j++) {
+                    if (j % 2 == 1) {
+                        soma += j;
+                    }
+                }
+            } else {
+                soma = 0;
+            }
+            System.out.println(soma);
+        }
+
+    }
+
+}
