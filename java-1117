@@ -1,0 +1,28 @@
+import java.io.IOException;
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) throws IOException {
+        Scanner scan = new Scanner(System.in);
+
+        int notasObtidas = 0;
+        double media = 0;
+
+        while (notasObtidas != 2) {
+            double notaEntrada = scan.nextDouble();
+
+            if (notaEntrada < 0 || notaEntrada > 10) {
+                System.out.println("nota invalida");
+            } else {
+                media += notaEntrada;
+                notasObtidas++;
+            }
+
+        }
+        media =  media / 2;
+        System.out.println("media = " + media);
+
+    }
+
+}
