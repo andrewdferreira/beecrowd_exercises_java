@@ -1,0 +1,55 @@
+import java.io.IOException;
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) throws IOException {
+        Scanner scan = new Scanner(System.in);
+
+        int qtdeGrenais = 0;
+        boolean grenal = true;
+        int viroriasInter = 0;
+        int viroriasGremio = 0;
+        int empates = 0;
+
+        while (grenal) {
+            int golsInter = scan.nextInt();
+            int golsGremio = scan.nextInt();
+            qtdeGrenais++;
+
+            if (golsInter > golsGremio) {
+                viroriasInter++;
+            } else if (golsGremio == golsInter) {
+                empates++;
+            } else {
+                viroriasGremio++;
+            }
+
+            System.out.println("Novo grenal (1-sim 2-nao)");
+            int cursor = scan.nextInt();
+            switch (cursor) {
+                case 1:
+                    break;
+                case 2:
+                    grenal = false;
+                    break;
+                default:
+            }
+
+        }
+
+        System.out.println(qtdeGrenais + " grenais");
+        System.out.println("Inter:" + viroriasInter);
+        System.out.println("Gremio:" + viroriasGremio);
+        System.out.println("Empates:" + empates);
+
+        if (viroriasInter > viroriasGremio) {
+            System.out.println("Inter venceu mais");
+        } else if (viroriasGremio == viroriasInter) {
+            System.out.println("Nao houve vencedor");
+        } else {
+            System.out.println("Gremio venceu mais");
+        }
+    }
+
+}
