@@ -1,0 +1,51 @@
+import java.io.IOException;
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) throws IOException {
+        Scanner scan = new Scanner(System.in);
+
+        int qtdeNotas = 0;
+        double nota1 = 0;
+        double nota2 = 0;
+
+        while (qtdeNotas != 2) {
+            double entradaNota = scan.nextDouble();
+
+            if (entradaNota < 0 || entradaNota > 10) {
+                System.out.println("nota invalida");
+            } else {
+                if (qtdeNotas == 0) {
+                    nota1 = entradaNota;
+                } else {
+                    nota2 = entradaNota;
+                }
+                if (nota1 != 0 && nota2 == entradaNota) {
+                    double media = (nota1 + nota2) / 2;
+                    System.out.printf("media = %.2f\n", media);
+                    System.out.println("novo calculo (1-sim 2-nao)");
+                    boolean decisao = false;
+                    while (!decisao) {
+                        int novoCalculo = scan.nextInt();
+                        switch (novoCalculo) {
+                            case 1:
+                                qtdeNotas = -1;
+                                decisao = true;
+                                break;
+                            case 2:
+                                qtdeNotas = 1;
+                                decisao = true;
+                                break;
+                            default:
+                                System.out.println("novo calculo (1-sim 2-nao)");
+                        }
+                    }
+                }
+                qtdeNotas++;
+            }
+
+        }
+    }
+
+}
