@@ -1,0 +1,30 @@
+import java.io.IOException;
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) throws IOException {
+        Scanner scan = new Scanner(System.in);
+
+        int x = scan.nextInt();
+        int z = scan.nextInt();
+
+
+        while (x >= z) {
+                z = scan.nextInt();
+        }
+
+        int numerosSomados = 0;
+        int soma = 0;
+        int numero = x;
+
+        while (soma <= z) {
+            soma += numero;
+            numero++;
+            numerosSomados++;
+        }
+
+        System.out.println(numerosSomados);
+    }
+
+}
