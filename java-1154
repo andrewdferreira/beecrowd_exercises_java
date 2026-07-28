@@ -1,0 +1,23 @@
+import java.io.IOException;
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) throws IOException {
+        Scanner scan = new Scanner(System.in);
+
+        int idade = scan.nextInt();
+        int qtdeIdades = 0;
+        int soma = 0;
+
+        while (idade > 0) {
+            soma += idade;
+            qtdeIdades++;
+            idade = scan.nextInt();
+        }
+
+        double media = (double) soma / qtdeIdades;
+        System.out.printf("%.2f\n",media);
+    }
+
+}
