@@ -1,0 +1,28 @@
+import java.io.IOException;
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) throws IOException {
+        Scanner scan = new Scanner(System.in);
+
+        int n = scan.nextInt();
+        int numero1 = 0;
+        int numero2 = 1;
+        int soma = 0;
+        int contador = 0;
+
+        while (contador < n) {
+            contador++;
+            if (contador == n) {
+                System.out.println(numero1);
+            } else {
+                System.out.print(numero1 + " ");
+                soma = numero1 + numero2;
+                numero1 = numero2;
+                numero2 = soma;
+            }
+        }
+    }
+
+}
