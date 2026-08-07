@@ -1,0 +1,33 @@
+import java.io.IOException;
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) throws IOException {
+        Scanner scan = new Scanner(System.in);
+
+        int t = scan.nextInt();
+
+        for (int i = 1; i <= t ; i++) {
+
+            int pa = scan.nextInt();
+            int pb = scan.nextInt();
+            double g1 = scan.nextDouble();
+            double g2 = scan.nextDouble();
+            int anos = 0;
+
+            while (pa <= pb && anos <= 100) {
+                pa += (int)(pa * g1 / 100);
+                pb += (int)(pb * g2 / 100);
+                anos++;
+            }
+
+            if (anos > 100) {
+                System.out.println("Mais de 1 seculo.");
+            } else {
+                System.out.println(anos + " anos.");
+            }
+        }
+    }
+
+}
