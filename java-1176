@@ -1,0 +1,25 @@
+import java.io.IOException;
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) throws IOException {
+        Scanner scan = new Scanner(System.in);
+
+        long[] fibonacci = new long[61];
+
+        fibonacci[0] = 0;
+        fibonacci[1] = 1;
+
+        for (int i = 2; i < fibonacci.length; i++) {
+            fibonacci[i] = fibonacci[i - 1] + fibonacci[i - 2];
+        }
+
+        int t = scan.nextInt();
+        for (int i = 1; i <= t; i++) {
+           int n = scan.nextInt();
+            System.out.println("Fib(" + n + ") = " + fibonacci[n]);
+        }
+    }
+
+}
