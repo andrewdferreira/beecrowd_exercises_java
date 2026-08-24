@@ -1,0 +1,52 @@
+import java.io.IOException;
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) throws IOException {
+        int[] par = new int[5];
+        int[] impar = new int[5];
+        int numerosEntrada = 0;
+        int indicePar = 0;
+        int indiceImpar = 0;
+
+        Scanner scan = new Scanner(System.in);
+
+        while(numerosEntrada <= 14) {
+            int valor = scan.nextInt();
+
+            if (valor % 2 == 0) {
+                par[indicePar] = valor;
+                indicePar++;
+            } else {
+                impar[indiceImpar] = valor;
+                indiceImpar++;
+            }
+
+            if (indicePar > 4) {
+                for (int i = 0; i < par.length; i++) {
+                    System.out.println("par[" + i + "] = " + par[i]);
+                }
+                indicePar = 0;
+            }
+
+            if (indiceImpar > 4) {
+                for (int i = 0; i < impar.length; i++) {
+                    System.out.println("impar[" + i + "] = " + impar[i]);
+                }
+                indiceImpar = 0;
+            }
+
+            numerosEntrada++;
+        }
+
+        for (int i = 0; i < indiceImpar; i++) {
+            System.out.println("impar[" + i + "] = " + impar[i]);
+        }
+
+        for (int i = 0; i < indicePar; i++) {
+            System.out.println("par[" + i + "] = " + par[i]);
+        }
+    }
+
+}
